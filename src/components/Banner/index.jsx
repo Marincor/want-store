@@ -1,9 +1,14 @@
 import styles from "../../styles/Banner/Banner.module.css";
 import { ColorButton } from "./styles";
-import { flexbox } from "@mui/system";
 import { Typography } from "@mui/material";
+import { useRouter } from "next/dist/client/router";
 
 export default function Banner() {
+
+const router = useRouter();
+
+
+
   return (
     <section className={styles.banner}>
       <div className={styles.banner__content}>
@@ -26,7 +31,7 @@ export default function Banner() {
           {" "}
           BREATHING...{" "}
         </Typography>
-        <ColorButton variant="contained">Shop now</ColorButton>
+        <ColorButton variant="contained" onClick={() => { router.push("/products") }}>Shop now</ColorButton>
       </div>
     </section>
   );
