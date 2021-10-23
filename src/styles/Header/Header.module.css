@@ -17,6 +17,10 @@
     margin-bottom: 0.8rem;
   }
 
+  .logo {
+    display: flex;
+  }
+
 
 }
 

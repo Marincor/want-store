@@ -20,6 +20,7 @@ import bask from "../../../public/assets/img/bask.png";
 import Images from "next/image";
 import { flexbox } from "@mui/system";
 import Cart from "../Cart";
+import ModalCart from "../Cart/Modal";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -172,14 +173,12 @@ export default function PrimarySearchAppBar() {
             sx={{ display: { xs: "none", sm: "block" } }}
             className={styles.title}
           >
-            <Images  src={bask} alt="iWanna-icon" width="20px" height="20px" /> I
+            
+            <Images  src={bask} alt="iWanna-icon" width="20px" height="20px" />
+         I
             Wanna . . .
           </Typography>
           <Search>
-            <span className={styles.logo}>
-              <Images src={bask} alt="iWanna-icon" width="20px" height="20px" />
-            </span>
-
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
@@ -188,11 +187,10 @@ export default function PrimarySearchAppBar() {
               <SearchIcon />
             </SearchIconWrapper>
           </Search>
-          <Cart />
+         <ModalCart />
         </Toolbar>
       </AppBar>
-      {renderMobileMenu}
-      {renderMenu}
+     
     </Box>
   );
 }
