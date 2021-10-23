@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Georama:wght@200&display=swap");
+
+
+@media screen and (min-width: 0px) {
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 2rem;
+    font-family: "Georama", sans-serif;
+    font-weight: bold;
+    color: darkgreen;
+    cursor: pointer;
+    margin-bottom: 0.8rem;
+  }
+
+
+}
+
+@media screen and (min-width: 768px) {
+  .logo {
+    display: none;
+  }
+}
