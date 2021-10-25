@@ -8,6 +8,7 @@ import { Typography } from "@mui/material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import IconButton from "@mui/material/IconButton";
 import CarouselItem from "../../components/Items/Carousel/index";
+import CountAmount from "../../components/Count";
 
 export default function ProductByID() {
   const router = useRouter();
@@ -64,6 +65,7 @@ export default function ProductByID() {
             <Typography variant="subtitle1" component="h3" fontWeight="bold">
               $ {currentItem?.sale_price}
             </Typography>
+            <CountAmount />
             <IconButton color="success" aria-label="add to shopping cart">
               <Typography> add to cart </Typography>
               {" ⠀"}

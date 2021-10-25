@@ -1,18 +1,20 @@
 @media screen and (min-width: 0px) {
-    
+
+
     .container {
-        width: 100%;
-        height: 90vh;
+        width: 98vw;
+        height: auto;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
+     
        
       }
       
       .imgProduct {
         margin: 2rem;
-        width: 40%;
+        width: 45%;
       
       }
       
@@ -23,6 +25,7 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
+       
       }
       
       .containterImg {
@@ -43,6 +46,13 @@
     .containterImg {
 
         width: 50%;
+      
+    }
+
+    .container {
+
+      height: auto;
+      align-items: flex-start;
     }
 
     
