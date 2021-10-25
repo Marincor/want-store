@@ -40,6 +40,7 @@ export default function Items() {
 
             return(
                 itemData.map((item) => (
+                  
                     <ImageListItem key={item._id}>
                       <img
                         src={`${item.product_main_image_url}?w=248&fit=crop&auto=format`}
@@ -47,6 +48,8 @@ export default function Items() {
                         alt={item.title}
                         loading="lazy"
                       />
+                      <Typography variant="caption" component="h3" color="GrayText">{item.product_title.split(" ")[0].toUpperCase()} {item.product_title.split(" ")[1].toUpperCase()} {item.product_title.split(" ")[2].toUpperCase()}</Typography>
+                      <Typography variant="subtitle1" component="p" fontWeight="bold">$ {item.sale_price}</Typography>
                     </ImageListItem>
                   ))
             )
