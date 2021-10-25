@@ -14,7 +14,7 @@ export default function Products() {
           getItems().then(data => {
               
               setItemData(data.docs); 
-              console.log(data)
+            
               
           })
 

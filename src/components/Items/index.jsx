@@ -4,12 +4,12 @@ import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import { ColorButton } from "./styles";
 import styles from '../../styles/Items/Items.module.css'
-import { border } from "@mui/system";
+import { useRouter } from "next/dist/client/router";
 
 
 export default function Items(props) {
 
- 
+ const router = useRouter();
 
     function renderListImage() {
 
@@ -29,7 +29,7 @@ export default function Items(props) {
                       <Typography variant="caption" component="h3" color="GrayText">{item.product_title.split(" ")[0].toUpperCase()} {item.product_title.split(" ")[1].toUpperCase()} {item.product_title.split(" ")[2].toUpperCase()}</Typography>
                       <div className={styles.container}>
                       <Typography variant="subtitle1" component="p" fontWeight="bold">$ {item.sale_price}</Typography>
-                      <ColorButton variant="contained"   sx={{ display: { xs: "none", sm: "block" } }}>show more</ColorButton>
+                      <ColorButton variant="contained"  onClick={()=>{ router.push(`/products/${item.product_id}`)}}  sx={{ display: { xs: "none", sm: "block" } }}>show more</ColorButton>
                         </div>
                     </ImageListItem>
                   ))
