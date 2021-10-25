@@ -15,12 +15,20 @@
     color: darkgreen;
     cursor: pointer;
     margin-bottom: 0.8rem;
+    
   }
 
   .logo {
     display: flex;
   }
 
+.container {
+
+  display: flex;
+  justify-content: center;
+  align-items:baseline;
+
+}
 
 }
 

@@ -1,7 +1,32 @@
-.Box {
+.container {
 
-    width: 50%;
-    height: 450px;
-    background-color: blue;
-    overflow-y: scroll;
+    display: flex;
+    width: auto;
+    height: auto;
+    justify-content: space-between;
+    align-items: flex-end;
+
+
+}
+
+
+@media screen and (min-width: 0px) {
+
+    .ImageList{
+        border: 1px solid green;
+        padding: 0.2rem;
+        cursor: pointer;
+      
+    }
+    
+}
+
+@media screen and (min-width: 768px) {
+    
+
+    .ImageList{
+
+        cursor:default;
+      
+    }
 }

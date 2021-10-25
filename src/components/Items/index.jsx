@@ -2,46 +2,24 @@ import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import { useEffect, useState } from "react";
-import getItems from "../../services/api";
+import { ColorButton } from "./styles";
+import styles from '../../styles/Items/Items.module.css'
+import { border } from "@mui/system";
 
 
-export default function Items() {
+export default function Items(props) {
 
-    const [itemData, setItemData] = useState([])
-
-    useEffect(()=>{
-
-
-        try {
-            getItems().then(data => {
-                
-                setItemData(data.docs); 
-                console.log(data)
-                
-            })
-
-        }
-        catch(error) {
-
-            console.log(error)
-        }
-        finally{
-
-            console.log("finish")
-        }
-    }, [])
-
+ 
 
     function renderListImage() {
 
 
-        if(itemData.length > 0) {
+        if(props.item.length > 0) {
 
             return(
-                itemData.map((item) => (
+                props.item.map((item) => (
                   
-                    <ImageListItem key={item._id}>
+                    <ImageListItem key={item._id} className={styles.ImageList} >
                       <img
                         src={`${item.product_main_image_url}?w=248&fit=crop&auto=format`}
                         srcSet={`${item.product_main_image_url}?w=248&fit=crop&auto=format&dpr=2 2x`}
@@ -49,7 +27,10 @@ export default function Items() {
                         loading="lazy"
                       />
                       <Typography variant="caption" component="h3" color="GrayText">{item.product_title.split(" ")[0].toUpperCase()} {item.product_title.split(" ")[1].toUpperCase()} {item.product_title.split(" ")[2].toUpperCase()}</Typography>
+                      <div className={styles.container}>
                       <Typography variant="subtitle1" component="p" fontWeight="bold">$ {item.sale_price}</Typography>
+                      <ColorButton variant="contained"   sx={{ display: { xs: "none", sm: "block" } }}>show more</ColorButton>
+                        </div>
                     </ImageListItem>
                   ))
             )

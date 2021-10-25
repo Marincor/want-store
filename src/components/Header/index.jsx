@@ -20,17 +20,20 @@ export default function PrimarySearchAppBar() {
     <Box sx={{ flexGrow: 1 }} >
       <AppBar position="static" color="inherit" className={styles.header}>
         <Toolbar >
+          <div className={styles.container}  onClick={(e) =>{ router.push("/")}}>
+        <Images src={bask} alt="iWanna-icon"  className="iconBask" width="20px" height="20px" />
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ display: { xs: "none", sm: "block" } }}
             className={styles.title}
-            onClick={(e) =>{ router.push("/")}}
-          >
-            <Images src={bask} alt="iWanna-icon"  width="20px" height="20px" />I
+           
+            >
+           I
             Wanna . . .
           </Typography>
+            </div>
           <Search>
             <StyledInputBase
               placeholder="Search…"
