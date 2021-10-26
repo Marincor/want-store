@@ -27,7 +27,7 @@ export default function ProductByID() {
     getCurrentItems(id);
   }, []);
 
-  
+  console.log(state.currentItem)
 
   return (
     <div>
@@ -89,7 +89,8 @@ export default function ProductByID() {
                         slideImage
                       ],
                       state.amount,
-                      state.currentItem?.sale_price
+                      state.currentItem?.sale_price,
+                      state.currentItem?.product_id
                     );
                   }}
                 >

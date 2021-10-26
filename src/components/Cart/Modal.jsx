@@ -15,8 +15,8 @@ export default function ModalCart() {
   const handleClose = () => setOpen(false);
 
   const state = useSelector(state => state)
+  console.log(state)
 
-  console.log(state.order)
   return (
     <div>
       <Button onClick={handleOpen}><Cart/> </Button>

@@ -1,14 +1,15 @@
 import { store } from "../../../store"
 
 
-export function addToCart(state, item, img,  quantity, price) {
+export function addToCart(state, item, img,  quantity, price, id) {
 
     const obj =   {
       product_title: item,
        product_main_image_url: img,
       quantity: quantity,
       price: price,
-      total: price * quantity
+      total: price * quantity,
+      id: id
     }
 
     const arr = state.order || [];
@@ -25,10 +26,14 @@ export function addToCart(state, item, img,  quantity, price) {
       return count
     }
 
+    const alreadyOnTheCart = state.order.find(item => item.id === id)
+
    
 
+    if(quantity > 0 && alreadyOnTheCart === undefined ) {
 
-    if(quantity > 0) {
+         
+
    
       arr.push(obj)
 
@@ -45,7 +50,20 @@ export function addToCart(state, item, img,  quantity, price) {
       })
   
   
-    } else {
+    } else if(alreadyOnTheCart && quantity > 0) {
+
+      alert("quantidade alterada")
+      alreadyOnTheCart.quantity = quantity;
+      alreadyOnTheCart.total = quantity * price;
+      store.dispatch({
+
+        type: "SET_AMOUNT_ORDER",
+        payload: quantityToCart()
+      })
+    }
+    
+    
+    else {
   
       alert("select one or more items to proceed with your purchase")
 
