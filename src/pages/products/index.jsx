@@ -1,51 +1,35 @@
 import Head from "next/head";
-import { useEffect, useState } from "react";
-import Header from '../../components/Header'
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import itemsStore from "../../components/actions/dataItem";
+import Header from "../../components/Header";
 import Items from "../../components/Items";
-import getItems from '../../services/api'
+import LoadingAnimation from "../../components/LoadingAnimation";
 
 export default function Products() {
-  const [itemData, setItemData] = useState([])
+  const state = useSelector((state) => state);
 
-  useEffect(()=>{
+  useEffect(() => {
+    itemsStore();
+  }, []);
 
+  return (
+    <div>
+      <Head>
+        <title>I Wanna - Products</title>
+        <meta name="description" content="Make a wish, get your desire!" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-      try {
-          getItems().then(data => {
-              
-              setItemData(data.docs); 
-            
-              
-          })
-
-      }
-      catch(error) {
-
-          console.log(error)
-      }
-      finally{
-
-          console.log("finish")
-      }
-  }, [])
-
-
-
-
-    return (
-      <div>
-        <Head>
-          <title>I Wanna - Products</title>
-          <meta name="description" content="Make a wish, get your desire!" />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-  
-        <body >
-          <Header />
-            <Items item={itemData} />
-     
-        </body>
-      </div>
-    );
-  }
-  
+      <body>
+        <Header />
+        
+        {state.loading ? (
+           <LoadingAnimation />
+        ) : (
+          <Items item={state?.items} />
+        )}
+      </body>
+    </div>
+  );
+}
