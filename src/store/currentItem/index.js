@@ -1,9 +1,6 @@
 
 
-const initialState = {
-
-    item: null
-}
+const initialState = null;
 
 
 

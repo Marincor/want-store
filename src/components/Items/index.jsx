@@ -5,7 +5,7 @@ import ImageListItem from "@mui/material/ImageListItem";
 import { ColorButton } from "./styles";
 import styles from '../../styles/Items/Items.module.css'
 import { useRouter } from "next/dist/client/router";
-
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 export default function Items(props) {
 
@@ -27,9 +27,14 @@ export default function Items(props) {
                         loading="lazy"
                       />
                       <Typography variant="caption" component="h3" color="GrayText">{item.product_title.split(" ")[0].toUpperCase()} {item.product_title.split(" ")[1].toUpperCase()} {item.product_title.split(" ")[2].toUpperCase()}</Typography>
+                      {item.quantity? <Typography>{item.quantity} </Typography> : false}
                       <div className={styles.container}>
-                      <Typography variant="subtitle1" component="p" fontWeight="bold">$ {item.sale_price}</Typography>
-                      <ColorButton variant="contained"  onClick={()=>{ router.push(`/products/${item.product_id}`)}}  sx={{ display: { xs: "none", sm: "block" } }}>show more</ColorButton>
+                      <Typography variant="subtitle1" component="p" fontWeight="bold">$ {item.total||item.sale_price}</Typography>
+
+                      {
+                        props.delete? <ColorButton size="small"><DeleteOutlineIcon/> </ColorButton> : (<ColorButton variant="contained"  onClick={()=>{ router.push(`/products/${item.product_id}`)}}  sx={{ display: { xs: "none", sm: "block" } }}>show more</ColorButton>)
+                      }
+                      
                         </div>
                     </ImageListItem>
                   ))
@@ -47,7 +52,9 @@ export default function Items(props) {
         padding: "2rem",
       }}
     >
-        <Typography variant="h4" component="h2" fontFamily="monospace">Products</Typography>
+        {props.cart? <Typography variant="h4" component="h2" fontFamily="monospace">Your Purchase</Typography>:
+      <Typography variant="h4" component="h2" fontFamily="monospace">Products</Typography>        
+        }
       <ImageList variant="masonry" cols={3} gap={8}>
         {renderListImage()}
       </ImageList>

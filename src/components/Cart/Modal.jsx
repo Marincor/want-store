@@ -1,10 +1,11 @@
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Cart from '.';
 import { useState } from 'react';
 import styles from '../../styles/Cart/Cart.module.css'
+import Items from '../Items';
+import { useSelector } from 'react-redux';
 
 
 
@@ -13,6 +14,9 @@ export default function ModalCart() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const state = useSelector(state => state)
+
+  console.log(state.order)
   return (
     <div>
       <Button onClick={handleOpen}><Cart/> </Button>
@@ -23,12 +27,11 @@ export default function ModalCart() {
         aria-describedby="items-of-cart"
       >
         <Box className={styles.modal}>
-          <Typography id="modal-cart" variant="h6" component="h2">
-            itens
-          </Typography>
-          <Typography id="items-of-cart" sx={{ mt: 2 }}>
-           itens
-          </Typography>
+        <Items item={state.order} 
+        
+        delete
+        cart
+        />
         </Box>
       </Modal>
     </div>

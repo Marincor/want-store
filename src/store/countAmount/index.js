@@ -1,4 +1,5 @@
 
+// amount of itens included in the select product by ID - countAmount component //
 
 const initialState = 1;
 

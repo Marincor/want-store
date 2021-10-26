@@ -11,6 +11,8 @@ import CountAmount from "../../components/Count";
 import { useSelector } from "react-redux";
 import getCurrentItems from "../../components/actions/currentItem";
 import LoadingAnimation from "../../components/LoadingAnimation";
+import { addToCart } from "../../components/actions/currentOrder";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 export default function ProductByID() {
   const router = useRouter();
@@ -25,11 +27,8 @@ export default function ProductByID() {
     getCurrentItems(id);
   }, []);
 
-function addToCart() {
-
-  console.log('teste')
-}
   
+
   return (
     <div>
       <Head>
@@ -42,7 +41,13 @@ function addToCart() {
         <Header />
         <div className={styles.container}>
           {state.loading ? (
-            <LoadingAnimation />
+            <>
+              <Typography variant="caption" component="h2">
+                {" "}
+                loading...
+              </Typography>
+              <LoadingAnimation />
+            </>
           ) : (
             <>
               <div className={styles.containterImg}>
@@ -73,8 +78,22 @@ function addToCart() {
                   $ {state.currentItem?.sale_price}
                 </Typography>
                 <CountAmount />
-                <IconButton color="success" aria-label="add to shopping cart" onClick={addToCart}>
-                  <Typography> add to cart </Typography>
+                <IconButton
+                  color="success"
+                  aria-label="add to shopping cart"
+                  onClick={() => {
+                    addToCart(
+                      state,
+                      state.currentItem?.product_title,
+                      state.currentItem?.product_small_image_urls?.string[
+                        slideImage
+                      ],
+                      state.amount,
+                      state.currentItem?.sale_price
+                    );
+                  }}
+                >
+                  <Typography variant="button" component="span"> add to cart </Typography>
                   {" ⠀"}
                   <AddShoppingCartIcon />
                 </IconButton>
@@ -82,6 +101,17 @@ function addToCart() {
             </>
           )}
         </div>
+        <IconButton
+          color="success"
+          aria-label="add to shopping cart"
+          onClick={() => {
+            router.push("/products");
+          }}
+        >
+          <Typography> products </Typography>
+          {" ⠀"}
+          <ArrowBackIcon />
+        </IconButton>
       </body>
     </div>
   );
