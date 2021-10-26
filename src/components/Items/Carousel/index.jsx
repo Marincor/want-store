@@ -14,7 +14,7 @@ import { useEffect, useState } from 'react';
     }, [props.item])
     function renderCarousel() {
 
-        console.log(images)
+    
         if(images !== undefined) {
 
             return(
@@ -24,6 +24,7 @@ import { useEffect, useState } from 'react';
                     return(
 
                         <img
+                        key={`5Y ${index} - ${props.alt}`}
                        className={styles.carousel}
                         src={`${image}?w=500&fit=crop&auto=format`}
                         srcSet={`${image}?w=500&fit=crop&auto=format&dpr=2 2x`}

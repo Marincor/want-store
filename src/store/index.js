@@ -1,12 +1,12 @@
 import { combineReducers, createStore } from "redux";
+import currentItemReducer from "./currentItem";
 import itemReducer from "./dataItem";
-import idReducer from "./id";
 import loadingReducer from "./loading";
 
 const rootReducer = combineReducers({
   loading: loadingReducer,
-  id: idReducer,
-  items: itemReducer
+  items: itemReducer,
+  currentItem: currentItemReducer
 });
 
 export const store = createStore(rootReducer);
