@@ -1,5 +1,5 @@
-import getItemByID from "../../../../services/api/itemById";
-import { store } from "../../../../store";
+import getItemByID from "../../../services/api/itemById";
+import { store } from "../../../store";
 
 export default async function getCurrentItems(id) {
 

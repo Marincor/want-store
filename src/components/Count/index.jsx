@@ -1,4 +1,3 @@
-import * as React from "react";
 import Box from "@mui/material/Box";
 import Badge from "@mui/material/Badge";
 import ButtonGroup from "@mui/material/ButtonGroup";
@@ -7,14 +6,11 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 import SentimentVeryDissatisfiedIcon from "@mui/icons-material/SentimentVeryDissatisfied";
+import { useSelector } from "react-redux";
+import setAmount from "../actions/countAmount/index.js";
 
 export default function CountAmount() {
-  const [count, setCount] = React.useState(1);
-  const [invisible, setInvisible] = React.useState(false);
-
-  const handleBadgeVisibility = () => {
-    setInvisible(!invisible);
-  };
+  const state = useSelector((state) => state);
 
   return (
     <Box
@@ -31,8 +27,8 @@ export default function CountAmount() {
       }}
     >
       <div>
-        <Badge color="success" badgeContent={count}>
-          {count > 0 ? (
+        <Badge color="success" badgeContent={state?.amount}>
+          {state?.amount > 0 ? (
             <EmojiEmotionsIcon />
           ) : (
             <SentimentVeryDissatisfiedIcon />
@@ -42,7 +38,7 @@ export default function CountAmount() {
           <Button
             aria-label="reduce"
             onClick={() => {
-              setCount(Math.max(count - 1, 0));
+              setAmount(state, "reduce");
             }}
           >
             <RemoveIcon fontSize="small" />
@@ -50,7 +46,7 @@ export default function CountAmount() {
           <Button
             aria-label="increase"
             onClick={() => {
-              setCount(count + 1);
+              setAmount(state, "increase");
             }}
           >
             <AddIcon fontSize="small" />

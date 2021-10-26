@@ -2,7 +2,6 @@ import { useRouter } from "next/dist/client/router";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import Header from "../../components/Header";
-import getItemByID from "../../services/api/itemById";
 import styles from "../../styles/Products/Products.module.css";
 import { Typography } from "@mui/material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
@@ -10,8 +9,7 @@ import IconButton from "@mui/material/IconButton";
 import CarouselItem from "../../components/Items/Carousel/index";
 import CountAmount from "../../components/Count";
 import { useSelector } from "react-redux";
-import { store } from "../../store";
-import getCurrentItems from "../../components/actions/dataItem/currentItem";
+import getCurrentItems from "../../components/actions/currentItem";
 import LoadingAnimation from "../../components/LoadingAnimation";
 
 export default function ProductByID() {
@@ -27,7 +25,10 @@ export default function ProductByID() {
     getCurrentItems(id);
   }, []);
 
+function addToCart() {
 
+  console.log('teste')
+}
   
   return (
     <div>
@@ -72,7 +73,7 @@ export default function ProductByID() {
                   $ {state.currentItem?.sale_price}
                 </Typography>
                 <CountAmount />
-                <IconButton color="success" aria-label="add to shopping cart">
+                <IconButton color="success" aria-label="add to shopping cart" onClick={addToCart}>
                   <Typography> add to cart </Typography>
                   {" ⠀"}
                   <AddShoppingCartIcon />
