@@ -24,6 +24,8 @@ export default function ProductByID() {
 
   const state = useSelector((state) => state);
 
+  console.log(state)
+
   useEffect(() => {
     const id = router.query.id;
 

@@ -10,9 +10,15 @@ import ModalCart from "../Cart/Modal";
 import { Search, SearchIconWrapper, StyledInputBase } from "./styles";
 import { useRouter } from "next/dist/client/router";
 import Link from "next/link";
+import { useSelector } from "react-redux";
+import searchedTerm from "../actions/searchedItem";
 
 export default function PrimarySearchAppBar() {
   const router = useRouter();
+
+  const state = useSelector(state => state)
+
+  console.log(state.search)
 
   return (
     <Box component="header" sx={{ flexGrow: 1 }}>
@@ -49,10 +55,27 @@ export default function PrimarySearchAppBar() {
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
+              value={state.search}
+              onChange={(e)=>{
+
+                searchedTerm(e.target.value)
+              }}
             />
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
+         
+
+              <SearchIconWrapper onClick={ () =>{
+
+router.push(`/products/search/${state.search}`);
+setTimeout(() =>{
+  searchedTerm("")
+
+},2000 )
+
+              }}>
+                <SearchIcon />
+              </SearchIconWrapper>
+        
+             
           </Search>
           <ModalCart />
         </Toolbar>

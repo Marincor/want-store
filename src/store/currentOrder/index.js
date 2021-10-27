@@ -14,7 +14,7 @@ const initialState = currentItem()|| [];
 
 
 export default function currentOrderReducer(state = initialState, action) {
-console.log(currentItem)
+
     switch(action.type) {
 
         case "CURRENT_ORDER": return action.payload;

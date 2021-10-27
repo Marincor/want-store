@@ -47,8 +47,8 @@ export default function Items(props) {
       return props.item.map((item) => (
         <ImageListItem key={item._id} className={styles.ImageList}>
           <img
-            src={`${item.product_main_image_url}?w=248&fit=crop&auto=format`}
-            srcSet={`${item.product_main_image_url}?w=248&fit=crop&auto=format&dpr=2 2x`}
+            src={`${ item.metadata?.image?.imageUrl || item.product_main_image_url  }?w=248&fit=crop&auto=format`}
+            srcSet={`${item.metadata?.image?.imageUrl || item.product_main_image_url}?w=248&fit=crop&auto=format&dpr=2 2x`}
             alt={item.title}
             loading="lazy"
             onClick={() => {

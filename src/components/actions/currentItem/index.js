@@ -15,6 +15,8 @@ export default async function getCurrentItems(id) {
 
     // API request and set items//
     await getItemByID(id).then((data) =>{
+
+      console.log(data)
       store.dispatch({
         type: "CURRENT_ITEM",
         payload: data,
@@ -36,6 +38,11 @@ export default async function getCurrentItems(id) {
           type: "lOADING_STATE",
           payload: false,
         });
+    } else {
+
+      return(
+        alert("Ali Express Api Exceeded... try again or comeback later!")
+      )
     }
   }
 }

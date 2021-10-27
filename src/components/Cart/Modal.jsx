@@ -24,7 +24,7 @@ export default function ModalCart() {
     console.log(`delete - ${id}`)
   }
 
-  console.log(state.order)
+
 
   return (
     <div>

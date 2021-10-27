@@ -30,7 +30,6 @@ import { store } from "../../store";
     })
   })
 
-  console.log(state)
 
   return (
     <IconButton aria-label="cart" >

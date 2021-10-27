@@ -1,19 +1,22 @@
-import getItems from "../../../services/api";
+
+import getItemsSearched from "../../../services/api/search";
 import { store } from "../../../store";
 
-export default async function itemsStore() {
+export default async function searchStore(name) {
 
     try {
-       await getItems().then(data => {
-            
+       await getItemsSearched(name).then(data => {
+            console.log(data)
             store.dispatch({
 
               type: "PRODUCTS_INFO",
-              payload: data.docs
+              payload: data.docs || data
             }); 
           
             
         })
+
+
 
     }
     catch(error) {

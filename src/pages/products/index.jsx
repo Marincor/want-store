@@ -7,15 +7,38 @@ import Header from "../../components/Header";
 import Items from "../../components/Items";
 import LoadingAnimation from "../../components/LoadingAnimation";
 
-export default function Products() {
+
+export function getStaticProps () {
+
+    
+ 
+
+  
+
+  return {
+
+    revalidate: 86400,
+    props: {
+      content: "Products Page",
+     
+    }
+  }
+}
+
+export default function Products(props) {
+
   const state = useSelector((state) => state);
 
-  useEffect(() => {
-    itemsStore();
-  }, []);
+console.log(props.content)
+
+useEffect(()=>{
+
+  itemsStore();
+})
+
 
   return (
-    <div>
+    <>
       <Head>
         <title>I Want - Products</title>
         <meta name="description" content="Make a wish, get your desire!" />
@@ -35,6 +58,6 @@ export default function Products() {
           <Items item={state?.items} />
         )}
       </body>
-    </div>
+    </>
   );
 }
