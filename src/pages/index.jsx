@@ -7,7 +7,7 @@ import styles from "../styles/Home.module.css";
 export function getStaticProps() {
 
 
-  return { props: { numero: Math.round(Math.random() * 25), content: "HomePage" } }
+  return { props: {  content: "HomePage" } }
 
 
 }
@@ -15,7 +15,6 @@ export function getStaticProps() {
 
 export default function Home(props) {
 
-console.log(props.numero)
 console.log(props.content)
 
   return (
@@ -24,6 +23,8 @@ console.log(props.content)
         <title>I Want...</title>
         <meta name="description" content="Make a wish, get your desire!" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       </Head>
 
       <body className={styles.body}>

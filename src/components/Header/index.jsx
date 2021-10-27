@@ -9,31 +9,42 @@ import Images from "next/image";
 import ModalCart from "../Cart/Modal";
 import { Search, SearchIconWrapper, StyledInputBase } from "./styles";
 import { useRouter } from "next/dist/client/router";
+import Link from "next/link";
 
 export default function PrimarySearchAppBar() {
-
-  const router = useRouter()
-
-  
+  const router = useRouter();
 
   return (
-    <Box sx={{ flexGrow: 1 }} >
-      <AppBar position="static" color="inherit" className={styles.header}>
-        <Toolbar >
-          <div className={styles.container}  onClick={(e) =>{ router.push("/")}}>
-        <Images src={bask} alt="iWanna-icon"  className="iconBask" width="20px" height="20px" />
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}
-            className={styles.title}
-           
-            >
-           I
-            Want . . .
-          </Typography>
-            </div>
+    <Box component="header" sx={{ flexGrow: 1 }}>
+      <AppBar
+        position="static"
+        color="inherit"
+        className={styles.header}
+        component="nav"
+      >
+        <Toolbar component="nav">
+          <Link passHref href="/">
+            <a className={styles.link}>
+              <nav className={styles.container}>
+                <Images
+                  src={bask}
+                  alt="iWanna-icon"
+                  className="iconBask"
+                  width="20px"
+                  height="20px"
+                />
+                <Typography
+                  variant="h6"
+                  noWrap
+                  component="h1"
+                  sx={{ display: { xs: "none", sm: "block" } }}
+                  className={styles.title}
+                >
+                  I Want . . .
+                </Typography>
+              </nav>
+            </a>
+          </Link>
           <Search>
             <StyledInputBase
               placeholder="Search…"
