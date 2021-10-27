@@ -37,6 +37,7 @@ export function addToCart(state, item, img,  quantity, price, id, notify, notify
    
       arr.push(obj)
 
+      window.localStorage.setItem("CURRENT_ORDER", JSON.stringify(arr))
       store.dispatch({
         type: "CURRENT_ORDER",
         payload: arr
@@ -60,6 +61,8 @@ export function addToCart(state, item, img,  quantity, price, id, notify, notify
         type: "SET_AMOUNT_ORDER",
         payload: quantityToCart()
       })
+
+      window.localStorage.setItem("CURRENT_ORDER", JSON.stringify(state.order))
     }
     
     

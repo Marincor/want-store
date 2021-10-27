@@ -21,7 +21,7 @@ console.log(props.content)
   return (
     <div className={styles.container}>
       <Head>
-        <title>I Wanna...</title>
+        <title>I Want...</title>
         <meta name="description" content="Make a wish, get your desire!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

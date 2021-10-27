@@ -42,7 +42,7 @@ export default function ProductByID() {
   return (
     <div>
       <Head>
-        <title>I Wanna - Product</title>
+        <title>I Want - Product</title>
         <meta name="description" content="Make a wish, get your desire!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

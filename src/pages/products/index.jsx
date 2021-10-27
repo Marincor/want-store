@@ -1,3 +1,4 @@
+
 import Head from "next/head";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
@@ -16,7 +17,7 @@ export default function Products() {
   return (
     <div>
       <Head>
-        <title>I Wanna - Products</title>
+        <title>I Want - Products</title>
         <meta name="description" content="Make a wish, get your desire!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -25,7 +26,9 @@ export default function Products() {
         <Header />
         
         {state.loading ? (
+          <>
            <LoadingAnimation />
+          </>
         ) : (
           <Items item={state?.items} />
         )}

@@ -1,11 +1,15 @@
 
 // amount of itens included in the cart - cart component //
 
+
+
+
 const initialState = 0;
 
 
 
 export default function amountOrderReducer(state = initialState, action) {
+   
 
     
     switch(action.type) {

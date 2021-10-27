@@ -31,7 +31,7 @@ export default function PrimarySearchAppBar() {
            
             >
            I
-            Wanna . . .
+            Want . . .
           </Typography>
             </div>
           <Search>

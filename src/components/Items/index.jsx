@@ -19,12 +19,16 @@ export default function Items(props) {
             return(
                 props.item.map((item) => (
                   
-                    <ImageListItem key={item._id} className={styles.ImageList} >
+                    <ImageListItem key={item._id} className={styles.ImageList} 
+                    
+                    
+                    >
                       <img
                         src={`${item.product_main_image_url}?w=248&fit=crop&auto=format`}
                         srcSet={`${item.product_main_image_url}?w=248&fit=crop&auto=format&dpr=2 2x`}
                         alt={item.title}
                         loading="lazy"
+                        onClick={()=>{ router.push(`/products/${item.product_id}`)}}
                       />
                       <Typography variant="caption" component="h3" color="GrayText">{item.product_title.split(" ")[0].toUpperCase()} {item.product_title.split(" ")[1].toUpperCase()} {item.product_title.split(" ")[2].toUpperCase()}</Typography>
                       {item.quantity? <Typography>{item.quantity} </Typography> : false}
@@ -32,7 +36,8 @@ export default function Items(props) {
                       <Typography variant="subtitle1" component="p" fontWeight="bold">$ {item.total||item.sale_price}</Typography>
 
                       {
-                        props.delete? <ColorButton size="small" onClick={()=>{ props.removeToTheCart(item.id)}}><DeleteOutlineIcon/> </ColorButton> : (<ColorButton variant="contained"  onClick={()=>{ router.push(`/products/${item.product_id}`)}}  sx={{ display: { xs: "none", sm: "block" } }}>show more</ColorButton>)
+                        props.delete? <ColorButton size="small" onClick={()=>{ props.removeToTheCart(item.id)}}><DeleteOutlineIcon/> </ColorButton> : 
+                        (<ColorButton variant="contained"  onClick={()=>{ router.push(`/products/${item.product_id}`)}}  sx={{ display: { xs: "none", sm: "block" } }}>show more</ColorButton>)
                       }
                       
                         </div>
@@ -55,7 +60,7 @@ export default function Items(props) {
         {props.cart? <Typography variant="h4" component="h2" fontFamily="monospace">Your Purchase</Typography>:
       <Typography variant="h4" component="h2" fontFamily="monospace">Products</Typography>        
         }
-      <ImageList variant="masonry" cols={3} gap={8}>
+      <ImageList variant="standard" cols={3} gap={8}>
         {renderListImage()}
       </ImageList>
     </Box>

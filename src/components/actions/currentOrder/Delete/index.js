@@ -24,7 +24,7 @@ export function removeToTheCart2(state, id) {
 
   if (alreadyOnTheCart.quantity < 2 && state.order.length === 0) {
 
-    console.log('um')
+    window.localStorage.setItem("CURRENT_ORDER", JSON.stringify(newArr))
     store.dispatch({
       type: "CURRENT_ORDER",
       payload: newArr,
@@ -34,7 +34,7 @@ export function removeToTheCart2(state, id) {
         payload: 0
       });
   }  else if(alreadyOnTheCart.quantity < 2 && state.order.length > 0) {
-    console.log('dois')
+    window.localStorage.setItem("CURRENT_ORDER", JSON.stringify(newArr))
     store.dispatch({
         type: "CURRENT_ORDER",
         payload: newArr,
@@ -50,6 +50,7 @@ export function removeToTheCart2(state, id) {
     alreadyOnTheCart.quantity -= 1;
     alreadyOnTheCart.total = alreadyOnTheCart.quantity * alreadyOnTheCart.price;
 
+    window.localStorage.setItem("CURRENT_ORDER", JSON.stringify(state.order))
     store.dispatch({
       type: "SET_AMOUNT_ORDER",
       payload: quantityToCart(),
