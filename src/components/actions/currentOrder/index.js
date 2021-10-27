@@ -1,7 +1,7 @@
 import { store } from "../../../store"
 
 
-export function addToCart(state, item, img,  quantity, price, id) {
+export function addToCart(state, item, img,  quantity, price, id, notify, notifyError) {
 
     const obj =   {
       product_title: item,
@@ -33,7 +33,7 @@ export function addToCart(state, item, img,  quantity, price, id) {
     if(quantity > 0 && alreadyOnTheCart === undefined ) {
 
          
-
+      notify("Included to the cart")
    
       arr.push(obj)
 
@@ -52,7 +52,7 @@ export function addToCart(state, item, img,  quantity, price, id) {
   
     } else if(alreadyOnTheCart && quantity > 0) {
 
-      alert("quantidade alterada")
+      notify("Amount changed")
       alreadyOnTheCart.quantity = quantity;
       alreadyOnTheCart.total = quantity * price;
       store.dispatch({
@@ -65,7 +65,7 @@ export function addToCart(state, item, img,  quantity, price, id) {
     
     else {
   
-      alert("select one or more items to proceed with your purchase")
+      notifyError("Select one or more items to proceed with your purchase")
 
     
     }

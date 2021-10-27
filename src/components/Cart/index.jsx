@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 
   const state = useSelector(state => state);
 
-
+console.log(state)
   return (
     <IconButton aria-label="cart" >
       <StyledBadge badgeContent={state.orderAmount} color="success">

@@ -32,7 +32,7 @@ export default function Items(props) {
                       <Typography variant="subtitle1" component="p" fontWeight="bold">$ {item.total||item.sale_price}</Typography>
 
                       {
-                        props.delete? <ColorButton size="small"><DeleteOutlineIcon/> </ColorButton> : (<ColorButton variant="contained"  onClick={()=>{ router.push(`/products/${item.product_id}`)}}  sx={{ display: { xs: "none", sm: "block" } }}>show more</ColorButton>)
+                        props.delete? <ColorButton size="small" onClick={()=>{ props.removeToTheCart(item.id)}}><DeleteOutlineIcon/> </ColorButton> : (<ColorButton variant="contained"  onClick={()=>{ router.push(`/products/${item.product_id}`)}}  sx={{ display: { xs: "none", sm: "block" } }}>show more</ColorButton>)
                       }
                       
                         </div>

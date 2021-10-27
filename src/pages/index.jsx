@@ -3,7 +3,21 @@ import Banner from "../components/Banner";
 import Header from "../components/Header";
 import styles from "../styles/Home.module.css";
 
-export default function Home() {
+
+export function getStaticProps() {
+
+
+  return { props: { numero: Math.round(Math.random() * 25), content: "HomePage" } }
+
+
+}
+
+
+export default function Home(props) {
+
+console.log(props.numero)
+console.log(props.content)
+
   return (
     <div className={styles.container}>
       <Head>

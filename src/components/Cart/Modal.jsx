@@ -6,6 +6,8 @@ import { useState } from 'react';
 import styles from '../../styles/Cart/Cart.module.css'
 import Items from '../Items';
 import { useSelector } from 'react-redux';
+import { removeToTheCart2 } from '../actions/currentOrder/Delete';
+import EmptyCartAnimation from '../emptyCartAnimation';
 
 
 
@@ -15,7 +17,14 @@ export default function ModalCart() {
   const handleClose = () => setOpen(false);
 
   const state = useSelector(state => state)
-  console.log(state)
+
+  function removeToTheCart(id) {
+
+    removeToTheCart2(state, id)
+    console.log(`delete - ${id}`)
+  }
+
+  console.log(state.order)
 
   return (
     <div>
@@ -27,11 +36,14 @@ export default function ModalCart() {
         aria-describedby="items-of-cart"
       >
         <Box className={styles.modal}>
+          {state.order.length === 0 ? <EmptyCartAnimation />: 
+          
         <Items item={state.order} 
-        
+        removeToTheCart={removeToTheCart}
         delete
         cart
         />
+      }
         </Box>
       </Modal>
     </div>

@@ -3,6 +3,10 @@ import { ColorButton } from "./styles";
 import { Typography } from "@mui/material";
 import { useRouter } from "next/dist/client/router";
 
+
+
+
+
 export default function Banner() {
 
 const router = useRouter();

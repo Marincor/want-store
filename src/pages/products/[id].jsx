@@ -13,6 +13,9 @@ import getCurrentItems from "../../components/actions/currentItem";
 import LoadingAnimation from "../../components/LoadingAnimation";
 import { addToCart } from "../../components/actions/currentOrder";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { store } from "../../store";
 
 export default function ProductByID() {
   const router = useRouter();
@@ -25,9 +28,16 @@ export default function ProductByID() {
     const id = router.query.id;
 
     getCurrentItems(id);
+
+    store.dispatch({
+
+      type: "SET_AMOUNT",
+      payload: 1
+    })
   }, []);
 
-  console.log(state.currentItem)
+  const notify = (msg) => toast.success(msg);
+  const notifyError = (msg) => toast.error(msg);
 
   return (
     <div>
@@ -40,6 +50,9 @@ export default function ProductByID() {
       <body>
         <Header />
         <div className={styles.container}>
+          <div>
+            <ToastContainer />
+          </div>
           {state.loading ? (
             <>
               <Typography variant="caption" component="h2">
@@ -90,11 +103,17 @@ export default function ProductByID() {
                       ],
                       state.amount,
                       state.currentItem?.sale_price,
-                      state.currentItem?.product_id
+                      state.currentItem?.product_id,
+                      notify,
+                      notifyError
                     );
+                    
                   }}
                 >
-                  <Typography variant="button" component="span"> add to cart </Typography>
+                  <Typography variant="button" component="span">
+                    {" "}
+                    add to cart{" "}
+                  </Typography>
                   {" ⠀"}
                   <AddShoppingCartIcon />
                 </IconButton>
