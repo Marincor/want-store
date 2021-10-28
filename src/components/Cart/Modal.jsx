@@ -21,7 +21,7 @@ export default function ModalCart() {
   function removeToTheCart(id) {
 
     removeToTheCart2(state, id)
-    console.log(`delete - ${id}`)
+    
   }
 
 

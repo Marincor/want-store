@@ -17,7 +17,7 @@ export default function Products() {
     searchStore(state.search);
   }, [router.query.search]);
 
-  console.log(state);
+
 
   function errorRequest() {
     setTimeout(() => {

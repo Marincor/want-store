@@ -45,7 +45,7 @@ export function removeToTheCart2(state, id) {
         });
   }
   else {
-    console.log('tres')
+
 
     alreadyOnTheCart.quantity -= 1;
     alreadyOnTheCart.total = alreadyOnTheCart.quantity * alreadyOnTheCart.price;

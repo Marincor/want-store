@@ -18,7 +18,7 @@ export default function PrimarySearchAppBar() {
 
   const state = useSelector(state => state)
 
-  console.log(state.search)
+
 
   return (
     <Box component="header" sx={{ flexGrow: 1 }}>

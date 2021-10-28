@@ -6,7 +6,7 @@ export default async function searchStore(name) {
 
     try {
        await getItemsSearched(name).then(data => {
-            console.log(data)
+  
             store.dispatch({
 
               type: "PRODUCTS_INFO",
