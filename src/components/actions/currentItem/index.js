@@ -41,8 +41,10 @@ export default async function getCurrentItems(id) {
     } else {
 
       return(
-        alert("Ali Express Api Exceeded... try again or comeback later!")
+        alert("Ali Express Api Exceeded... try again or comeback later!"),
+        window.location.href("/404")
       )
+     
     }
   }
 }
