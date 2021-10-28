@@ -1,7 +1,7 @@
 import getItemByID from "../../../services/api/itemById";
 import { store } from "../../../store";
 
-export default async function getCurrentItems(id) {
+export default async function getCurrentItems(id, router) {
 
     let finish = false;
 
@@ -42,7 +42,10 @@ export default async function getCurrentItems(id) {
 
       return(
         alert("Ali Express Api Exceeded... try again or comeback later!"),
-        window.location.href("/404")
+        setTimeout(()=>{
+          router.push("/404")
+        },2000)
+        
       )
      
     }

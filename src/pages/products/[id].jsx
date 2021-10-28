@@ -29,7 +29,7 @@ export default function ProductByID() {
   useEffect(() => {
     const id = router.query.id;
 
-    getCurrentItems(id);
+    getCurrentItems(id, router);
 
     store.dispatch({
 
