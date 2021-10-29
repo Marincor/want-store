@@ -70,9 +70,9 @@ Divisão de páginas feitas em:
 
 > Complementar:
 
-  <img  width='100px' src='https://user-images.githubusercontent.com/84210050/132045800-c876540d-b0ce-495f-9898-7bf26963b111.png' alt='reactLottie-logo'/>  <img  width='50px' src='https://cdn.worldvectorlogo.com/logos/material-ui-1.svg' alt='Material-ui-logo'/>   <img  width='50px' src='https://user-images.githubusercontent.com/84210050/132046319-c224eaff-718c-4baf-9a7f-a8147d27914c.png' alt='react-Toastify'/> 
-  
+  <img  width='100px' src='https://user-images.githubusercontent.com/84210050/132045800-c876540d-b0ce-495f-9898-7bf26963b111.png' alt='reactLottie-logo'/>  <img  width='50px' src='https://cdn.worldvectorlogo.com/logos/material-ui-1.svg' alt='Material-ui-logo'/>   <img  width='50px' src='https://user-images.githubusercontent.com/84210050/132046319-c224eaff-718c-4baf-9a7f-a8147d27914c.png' alt='react-Toastify'/>  <img  width='50px' src='https://d33wubrfki0l68.cloudfront.net/97f337956b87f4589dbf68591f22f5f3dacf2736/55f2a/img/redux_white.svg' alt='react-redux'/> 
+   
   
  
  
--  React Lottie /  Material-UI / React-Toastify
+-  React Lottie /  Material-UI / React-Toastify / React-Redux
