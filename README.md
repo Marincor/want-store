@@ -1,7 +1,7 @@
-# I Want - E-Commerce
+# ![image](https://user-images.githubusercontent.com/84210050/140591302-6ad1751d-417d-47d7-b18f-9ad3586b0288.png) I Want - E-Commerce
 > e-commerce using the Ali Express API
 
-<a href="https://github.com/Marincor/want-store/#Responsividade"> Responsividade </a> | <a href="https://github.com/Marincor/want-store/#Aplicação"> Aplicação </a> | <a href="https://github.com/Marincor/want-store/#Sobre"> Sobre </a> | <a href="https://github.com/Marincor/want-store/#Funcionalidades"> Funcionalidades </a> | <a href="https://github.com/Marincor/want-store/#tecnologias-usadas"> Tecnologias usadas </a>
+☰  <a href="https://github.com/Marincor/want-store/#Responsividade"> Responsividade </a> | <a href="https://github.com/Marincor/want-store/#Aplicação"> Aplicação </a> | <a href="https://github.com/Marincor/want-store/#Sobre"> Sobre </a> | <a href="https://github.com/Marincor/want-store/#Funcionalidades"> Funcionalidades </a> | <a href="https://github.com/Marincor/want-store/#tecnologias-usadas"> Tecnologias usadas </a>
 
 <hr/>
 
@@ -17,15 +17,15 @@
 
 ![image](https://user-images.githubusercontent.com/84210050/139268038-e7800c5d-982f-47f3-8f57-b577bb79090d.png)
 
-# Responsividade
+# 📱 Responsividade
 
 ![want tour](https://user-images.githubusercontent.com/84210050/139270211-fd486a46-fbef-4ed8-9a66-817a14854f1f.gif)
 
-# Aplicação
+# 🏠 Aplicação
 
 https://want-store.vercel.app/
 
-# Sobre
+# 🛈 Sobre
 
 Site conceito de e-commerce, feito para simular a experiência do usuário em um e-commerce. Foi utilizado paletas na cor branca e verde, com tema "eco-green" para fazer a parte visual do site com o layout. 
 
@@ -49,7 +49,7 @@ Divisão de páginas feitas em:
 
 6º feedbacks são bem-vindos :)
 
-# Funcionalidades
+# 💡 Funcionalidades
 
 - Adicionar produtos ao carrinho;
 - Alterar quantidade adicionada;
@@ -57,7 +57,7 @@ Divisão de páginas feitas em:
 - Finalizar compra;
 - Itens do carrinho salvos no dispositivo utilizado (Web Local Storage).
 
-# Tecnologias usadas
+# 🚀 Tecnologias usadas
 
 > Base:
 
