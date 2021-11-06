@@ -1,7 +1,7 @@
 # ![image](https://user-images.githubusercontent.com/84210050/140591302-6ad1751d-417d-47d7-b18f-9ad3586b0288.png) I Want - E-Commerce
 > e-commerce using the Ali Express API
 
-☰  <a href="https://github.com/Marincor/want-store/#Responsividade"> Responsividade </a> | <a href="https://github.com/Marincor/want-store/#Aplicação"> Aplicação </a> | <a href="https://github.com/Marincor/want-store/#Sobre"> Sobre </a> | <a href="https://github.com/Marincor/want-store/#Funcionalidades"> Funcionalidades </a> | <a href="https://github.com/Marincor/want-store/#tecnologias-usadas"> Tecnologias usadas </a>
+☰  <a href="https://github.com/Marincor/want-store/#-Responsividade"> Responsividade </a> | <a href="https://github.com/Marincor/want-store/#-Aplicação"> Aplicação </a> | <a href="https://github.com/Marincor/want-store/#-Sobre"> Sobre </a> | <a href="https://github.com/Marincor/want-store/#-Funcionalidades"> Funcionalidades </a> | <a href="https://github.com/Marincor/want-store/#-tecnologias-usadas"> Tecnologias usadas </a>
 
 <hr/>
 
